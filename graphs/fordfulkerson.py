@@ -3,7 +3,6 @@
 import pylab
 import networkx as nx
 from shortest_path import BFS
-from Queue import Queue
 
 def _createAux(G, capacity='weight'):
     

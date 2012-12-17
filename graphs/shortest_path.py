@@ -5,6 +5,7 @@ import networkx as nx
 from Queue import Queue, PriorityQueue
     
 def BFS(G, s, t):
+    """Shortest path for unweighted graph"""
     
     for u in G.nodes():
         G.node[u]['dist'] = float('inf')
@@ -34,12 +35,14 @@ def BFS(G, s, t):
     return "Error: target not in reach"
     
 def dijkstra(G, s, t, weight='weight'):
+    """Shortest path for weighted graph"""
     
     for u in G.nodes():
         G.node[u]['dist'] = float('inf')
     
     G.node[s]['dist'] = 0
     
+    #Use heap to speed up finding min repeatedly
     nodeQ = PriorityQueue()
     nodeQ.put((0, s))
     
